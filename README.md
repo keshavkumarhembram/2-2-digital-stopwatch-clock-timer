@@ -1,28 +1,32 @@
-# How to create Clock using HTML, CSS and Javascript?
+# How to create a Clock using HTML, CSS, and Javascript?
 
 ## Table of Contents
 
 - [Introduction](#introduction)
 - [Final Result](#final-result)
 - [Let's start building Clock](#lets-start-building-clock)
-  - [Creating HTML document](#creating-html-document)
+  - [Creating HTML document](#creating-an-html-document)
   - [Using Date object for getting time](#using-date-object-for-getting-time)
-  - [We have date now but we have show it to normal user using DOM](#we-have-date-now-but-we-have-show-it-to-normal-user-using-dom)
+  - [We have a date now but we have to show it to the normal user using DOM](#we-have-the-date-now-but-we-have-to-show-it-to-normal-users-using-dom)
   - [Final Javascript Code](#final-javascript-code)
   - [Styling clock](#styling-clock)
 - [Conclusion](#conclusion)
 
 ## Introduction
 
-In this article we will learn about building Clock using HTML, CSS and Javascript. By building clock we learn about javascript Date object. We will build 12 hours Clock and we will be working with time in Date object.
+In this article, we will learn about building a Clock using HTML, CSS, and Javascript. By building the clock we learn about javascript Date object. We will build 12 hours Clock and we will be working with time in the Date object.
 
 ## Final Result
+
+[Live Site](https://keshavkumarhembram.github.io/2-2-digital-stopwatch-clock-timer/)
+
+[Github Repo](https://github.com/keshavkumarhembram/2-2-digital-stopwatch-clock-timer)
 
 ![final result screenshot](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/pet38vpn4670psbieplu.png)
 
 ## Let's start building Clock
 
-### Creating HTML document
+### Creating an HTML document
 
 ```html
 <!DOCTYPE html>
@@ -54,7 +58,7 @@ In this article we will learn about building Clock using HTML, CSS and Javascrip
 </html>
 ```
 
-- I have add style and script in html.
+- I have added style and script in HTML.
 
 ### Using Date object for getting time
 
@@ -65,7 +69,7 @@ const date = new Date();
 console.log(date);
 ```
 
-- **How date object looks**
+- **How the date object looks**
 
 ![console log date object](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xvqv8rtxu0luvwj21xp6.png)
 
@@ -95,9 +99,9 @@ setInterval(() => {
 
 ![console log updating time](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/j2kuy4jao8uy1x5aybzj.png)
 
-### We have date now but we have show it to normal user using DOM
+### We have the date now but we have to show it to normal users using DOM
 
-- **We to get elements from this html document**
+- **We to get elements from this HTML document**
 
 ```html
 <main>
@@ -112,7 +116,7 @@ setInterval(() => {
 </main>
 ```
 
-- javascript code for getting each elements
+- javascript code for getting each element
 
 ```js
 const hoursDisplay = document.getElementById('hours');
@@ -122,7 +126,7 @@ const suffix = document.getElementById('suffix');
 ```
 
 - **Now, we can make changes to each element. Then let's add hours, minutes, seconds**
-  - we should keep than in mind it should be within `setInterval` so that it keep on updating
+  - we should keep that in mind it should be within `setInterval` so that it keeps on updating
 
 ```js
 hoursDisplay.innerText = hours;
@@ -144,7 +148,7 @@ function leadingZeros(num) {
 }
 ```
 
-- use that function to modify our varialbles
+- use that function to modify our variables
 
 ```js
 hours = leadingZeros(hours);
@@ -154,8 +158,8 @@ seconds = leadingZeros(seconds);
 
 ![modified clock](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/i49hpxrth1eovmcd8awh.png)
 
-- **We will make it a twelve it a twelve hours clock using two function. One for converting 24 hours format to 12 hours format . One for setting suffix like 'AM' or 'PM'.**
-  - for deciding suffix
+- **We will make it a twelve it a twelve hours clock using two functions. One for converting 24-hour format to 12 hours format. One for setting suffixes like 'AM' or 'PM'.**
+  - for deciding on suffix
 
 ```js
 function timeSuffix(hours) {
@@ -166,7 +170,7 @@ function timeSuffix(hours) {
 }
 ```
 
-- for converting format
+- for converting the format
 
 ```js
 function twelveHour(hours) {
@@ -232,8 +236,8 @@ function twelveHour(hours) {
 
 ### Styling clock
 
-- I have kept syling simple and easy.
-- Yet there are some things that should be kept in mind that we should fix elemet size because it will change the shape constantly while updating time.
+- I have kept styling simple and easy.
+- Yet there are some things that should be kept in mind that we should fix element size because it will change the shape constantly while updating time.
 
 ```css
 /* GLOBALS */
@@ -298,6 +302,6 @@ main {
 
 ## Conclusion
 
-It's a great project to learn how to hanlde it time from Date object in javascript. You can still refactor the code to make it look nice in javascript code. That I will do in next blog where I make stopwatch.
+It's a great project to learn how to handle time from a Date object in javascript. You can still refactor the code to make it look nice in javascript code. That I will do in the next blog where I make a stopwatch.
 
 **If you enjoyed it reading. If any changes you want comment. Please comment on this blog.**
